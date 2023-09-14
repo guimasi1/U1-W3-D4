@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 200;
+}
+
+#bingo-container {
+  /* width: 90%; */
+  height: 80vh;
+  margin: 1em auto;
+  border: black solid 1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
+}
+
+.numbersDiv {
+  display: inline-block;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  font-size: 2em;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  border: black solid 1px;
+}
+
+#button-div {
+  display: flex;
+  justify-content: center;
+}
+
+#button {
+  border-radius: 1em;
+  padding: 1em;
+  margin: 1em auto;
+}
+
+.red {
+  background-color: red;
+  color: white;
+}
