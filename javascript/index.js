@@ -28,10 +28,25 @@ const oneTo76 = function () {
 };
 oneTo76();
 
-button.addEventListener("click", function (e) {
-  const randomNumber = Math.floor(Math.random() * 76) + 1;
-  randomizedNumbers.push(randomNumber);
+// button.addEventListener("click", function (e) {
+//   let randomNumber = Math.floor(Math.random() * 76) + 1;
+//   do {
+//     randomizedNumbers.push(randomNumber);
+//   } while (!randomizedNumbers.includes(randomNumber));
+//   {
+//     compare();
+//     compareCard();
+//     randomizedNumbers.push(randomNumber);
+//   }
+// });
 
+button.addEventListener("click", function (e) {
+  let randomNumber;
+  do {
+    randomNumber = Math.floor(Math.random() * 76) + 1;
+  } while (randomizedNumbers.includes(randomNumber));
+
+  randomizedNumbers.push(randomNumber);
   compare();
   compareCard();
 });
@@ -70,11 +85,8 @@ const createPlayerCard = function () {
     newCell.innerText = randomNumber;
     playerCard.appendChild(newCell);
     arrayOfPlayerNumbers.push(newCell);
-
-    // newNumberCell[i].innerText = i + 1;
   }
 };
-// createPlayerCard();
 
 const buttonCreate = document.getElementById("createCards");
 
