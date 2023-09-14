@@ -11,8 +11,6 @@ const createNumbersCells = function () {
     newNumberCell.innerText = i + 1;
     bingodiv.appendChild(newNumberCell);
     arrayOfNumbersBingo.push(newNumberCell);
-
-    // newNumberCell[i].innerText = i + 1;
   }
 };
 createNumbersCells();
@@ -35,6 +33,7 @@ button.addEventListener("click", function (e) {
   randomizedNumbers.push(randomNumber);
 
   compare();
+  compareCard();
 });
 
 function compare() {
@@ -46,3 +45,37 @@ function compare() {
     }
   }
 }
+
+const arrayOfPlayerNumbers = [];
+function compareCard() {
+  for (let i = 0; i < randomizedNumbers.length; i++) {
+    for (let j = 0; j < arrayOfPlayerNumbers.length; j++) {
+      if (
+        randomizedNumbers[i] === parseInt(arrayOfPlayerNumbers[j].innerText)
+      ) {
+        arrayOfPlayerNumbers[j].classList.add("red");
+      }
+    }
+  }
+}
+const createPlayerCard = function () {
+  const playerArea = document.getElementById("playerArea");
+  const playerCard = document.createElement("section");
+  playerCard.classList.add("playCard");
+  playerArea.appendChild(playerCard);
+  for (let i = 0; i < 24; i++) {
+    const newCell = document.createElement("div");
+    newCell.classList.add("numbersDiv");
+    const randomNumber = Math.floor(Math.random() * 76) + 1;
+    newCell.innerText = randomNumber;
+    playerCard.appendChild(newCell);
+    arrayOfPlayerNumbers.push(newCell);
+
+    // newNumberCell[i].innerText = i + 1;
+  }
+};
+// createPlayerCard();
+
+const buttonCreate = document.getElementById("createCards");
+
+buttonCreate.addEventListener("click", createPlayerCard);

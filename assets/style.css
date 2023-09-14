@@ -35,13 +35,29 @@ body {
   justify-content: center;
 }
 
-#button {
+button {
   border-radius: 1em;
   padding: 1em;
-  margin: 1em auto;
+  margin: 1em auto 2em;
+  border: none;
+  background-color: lightcoral;
 }
 
 .red {
   background-color: red;
   color: white;
+}
+
+#playerArea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 90%;
+  margin: 1em auto;
+}
+
+.playCard {
+  width: 30%;
+  margin-bottom: 2em;
+  border: black 1px solid;
 }
